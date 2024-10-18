@@ -1,0 +1,138 @@
+@media screen and (max-width: 1000px) {
+    .toggle-images {
+        flex-direction: column;
+    }
+}
+.toggle-images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.game-image {
+    width: 400px;
+    height: auto;
+    transition: all 0.2s ease-in-out;
+}
+@media screen and (max-width: 1000px) {
+    .game-image {
+        margin-bottom: 10px;
+    }
+}
+
+.text[data-v-1d580398] {
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+    display: block;
+}
+
+#profile[data-v-1d580398], .col[data-v-1d580398], .row[data-v-1d580398] {
+    padding: 0;
+    margin: 0;
+}
+.row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+@media screen and (max-width: 768px) {
+    .text .title[data-v-1d580398] {
+        margin-top: 10rem;
+    }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.text {
+    text-align: center;
+    width: 100%;
+}
+
+.title {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 2rem;
+    color: #f8f9fa;
+}
+
+.price-wrapper {
+    display: inline-flex;
+    align-items: baseline;
+    color: #6528c9;
+    font-weight: 600;
+}
+
+.glow {
+    animation: glow 1s ease-in-out infinite alternate;
+    color: #fff;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #28085d, 0 0 30px #28085d;
+    }
+    to {
+        text-shadow: 0 0 20px #fff, 0 0 30px #4d02c4, 0 0 40px #4d02c4;
+    }
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    line-height: 1.6;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+
+.custom-button {
+    background: linear-gradient(45deg, #6528c9, #8a4fff);
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(101, 40, 201, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.custom-button svg {
+    stroke-width: 2;
+}
+
+@media (max-width: 768px) {
+    .title {
+        margin-top: 5rem;
+    }
+    .subtitle{
+        font-size: 0.7rem;
+    }
+
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
