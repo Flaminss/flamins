@@ -32,13 +32,6 @@
     padding: 0;
     margin: 0;
 }
-.row {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
-}
 
 @media screen and (max-width: 768px) {
     .text .title[data-v-1d580398] {

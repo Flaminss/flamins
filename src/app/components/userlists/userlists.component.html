@@ -1,1 +1,111 @@
-<p>userlists works!</p>
+<div class="user-list-container">
+  <div
+    class="user-card-wrapper"
+    style="
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+    "
+  >
+    <!-- Top 3 Users Cards -->
+    <div class="user-card user-left" *ngFor="let user of userlists.slice(0, 1)">
+      <img
+        alt="{{ user.Username }}'s avatar"
+        src="../../../assets/img/soakedlogo.png"
+        width="96"
+        height="96"
+        class="user-avatar"
+        style="
+          background-color: rgba(0, 0, 0, 0.5);
+          padding: 0.5rem;
+          border-radius: 5px;
+        "
+      />
+      <div class="username-wrapper">
+        <span class="username">{{ reAdjustUserName(user.Username) }}</span>
+      </div>
+      <div class="user-wager-info">
+        <span class="wagered-label">Wagered: </span>
+        <span class="amount">$ {{ user.wagered }}</span>
+      </div>
+      <span class="reward-info">
+        <div class="amount-wrapper">
+          <span class="amount glow">$ {{ user.Reward }}</span>
+        </div>
+      </span>
+    </div>
+
+    <div
+      class="user-card user-center"
+      style="margin-top: 2rem"
+      *ngFor="let user of userlists.slice(1, 2)"
+    >
+      <img
+        alt="{{ user.Username }}'s avatar"
+        src="../../../assets/img/soakedlogo.png"
+        style="
+          background-color: rgba(0, 0, 0, 0.5);
+          padding: 0.5rem;
+          border-radius: 5px;
+        "
+        width="96"
+        height="96"
+        class="user-avatar"
+      />
+      <div class="username-wrapper">
+        <span class="username">{{ reAdjustUserName(user.Username) }}</span>
+      </div>
+      <div class="user-wager-info">
+        <span class="wagered-label">Wagered: </span>
+        <span class="amount">$ {{ user.wagered }}</span>
+      </div>
+      <span class="reward-info">
+        <div class="amount-wrapper">
+          <span class="amount glow">$ {{ user.Reward }}</span>
+        </div>
+      </span>
+    </div>
+
+    <div
+      class="user-card user-right"
+      style="margin-top: 2rem"
+      *ngFor="let user of userlists.slice(2, 3)"
+    >
+      <img
+        alt="{{ user.Username }}'s avatar"
+        src="../../../assets/img/soakedlogo.png"
+        style="
+          background-color: rgba(0, 0, 0, 0.5);
+          padding: 0.5rem;
+          border-radius: 5px;
+        "
+        width="96"
+        height="96"
+        class="user-avatar"
+      />
+      <div class="username-wrapper">
+        <span class="username">{{ reAdjustUserName(user.Username) }}</span>
+      </div>
+      <div class="user-wager-info">
+        <span class="wagered-label">Wagered: </span>
+        <span class="amount">$ {{ user.wagered }}</span>
+      </div>
+      <span class="reward-info">
+        <div class="amount-wrapper">
+          <span class="amount glow">$ {{ user.Reward }}</span>
+        </div>
+      </span>
+    </div>
+  </div>
+
+  <!-- Remaining Users List -->
+  <ul>
+    <li *ngFor="let user of userlists.slice(3)">
+      <strong>{{ reAdjustUserName(user.Username) }}</strong> - Wagered: ${{
+        user.wagered
+      }}
+      | Reward: ${{ user.Reward }}
+    </li>
+  </ul>
+</div>

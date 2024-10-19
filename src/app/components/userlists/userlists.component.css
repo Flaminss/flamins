@@ -1,0 +1,116 @@
+.user-list-container {
+    margin-top: 1.75rem;
+    margin-bottom: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+  }
+  
+  .user-card-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 1.25rem;
+  }
+  
+  @media (max-width: 600px) {
+    .user-card-wrapper {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+  @media (min-width: 601px) and (max-width: 900px) {
+    .user-card-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+  }
+  
+  /* Individual user card styling */
+  .user-card {
+    width: 14rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to top, rgba(102, 40, 201, 0.3), rgba(102, 40, 201, 0.1));
+    border: 2px solid rgba(102, 40, 201, 0.8);
+    border-radius: 0.25rem;
+    padding: 1rem 1rem 1rem 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: scale(1);
+    box-shadow: 0 0 100px rgba(102, 40, 201, 1);
+  }
+  .user-card:hover {
+    transform: scale(1.07); 
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); 
+    box-shadow: 0 0 100px rgba(102, 40, 201, 1);
+  }
+  
+  .user-avatar {
+    width: 96px;
+    height: 96px;
+    margin-bottom: 1rem;
+  }
+  
+  .username-wrapper {
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: white;
+  }
+  
+  .user-wager-info {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    border: 1px solid rgba(132, 139, 141, 0.25);
+    border-radius: 0.25rem;
+    font-size: 1.2rem;
+  }
+  
+  .wagered-label {
+    color: rgba(219, 225, 229, 0.75);
+  }
+  
+  .wagered-value {
+    color: white;
+  }
+  
+  .reward-info {
+    margin-top: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: white;
+  }
+  
+  .amount-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+  }
+  
+  .amount {
+    font-size: 14px;
+  }
+  
+  .glow {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+  }
+
+  .user-left {
+    order: 2; /* Push to the left */
+  }
+  
+  .user-right {
+    order: 3; /* Push to the right */
+  }
+  
+ 
