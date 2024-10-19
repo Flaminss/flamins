@@ -1,7 +1,6 @@
 {
   "name": "soaked",
   "version": "0.0.0",
-  "proxy": "https://roobetconnect.com",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
