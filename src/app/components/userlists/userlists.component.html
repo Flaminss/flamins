@@ -11,7 +11,7 @@
     <!-- Top 3 Users Cards -->
     <div class="user-card user-left" *ngFor="let user of userlists.slice(0, 1)">
       <img
-        alt="{{ user.Username }}'s avatar"
+        alt="{{ user.username }}'s avatar"
         src="../../../assets/img/soakedlogo.png"
         width="96"
         height="96"
@@ -23,7 +23,7 @@
         "
       />
       <div class="username-wrapper">
-        <span class="username">{{ reAdjustUserName(user.Username) }}</span>
+        <span class="username">{{ reAdjustUserName(user.username) }}</span>
       </div>
       <div class="user-wager-info">
         <span class="wagered-label">Wagered: </span>
@@ -31,7 +31,7 @@
       </div>
       <span class="reward-info">
         <div class="amount-wrapper">
-          <span class="amount glow">$ {{ user.Reward }}</span>
+          <span class="amount glow">$ {{ user.weightedWagered | integer }}</span>
         </div>
       </span>
     </div>
@@ -42,7 +42,7 @@
       *ngFor="let user of userlists.slice(1, 2)"
     >
       <img
-        alt="{{ user.Username }}'s avatar"
+        alt="{{ user.username }}'s avatar"
         src="../../../assets/img/soakedlogo.png"
         style="
           background-color: rgba(0, 0, 0, 0.5);
@@ -54,7 +54,7 @@
         class="user-avatar"
       />
       <div class="username-wrapper">
-        <span class="username">{{ reAdjustUserName(user.Username) }}</span>
+        <span class="username">{{ reAdjustUserName(user.username) }}</span>
       </div>
       <div class="user-wager-info">
         <span class="wagered-label">Wagered: </span>
@@ -62,7 +62,7 @@
       </div>
       <span class="reward-info">
         <div class="amount-wrapper">
-          <span class="amount glow">$ {{ user.Reward }}</span>
+          <span class="amount glow">$ {{ user.weightedWagered | integer }}</span>
         </div>
       </span>
     </div>
@@ -73,7 +73,7 @@
       *ngFor="let user of userlists.slice(2, 3)"
     >
       <img
-        alt="{{ user.Username }}'s avatar"
+        alt="{{ user.username }}'s avatar"
         src="../../../assets/img/soakedlogo.png"
         style="
           background-color: rgba(0, 0, 0, 0.5);
@@ -85,7 +85,7 @@
         class="user-avatar"
       />
       <div class="username-wrapper">
-        <span class="username">{{ reAdjustUserName(user.Username) }}</span>
+        <span class="username">{{ reAdjustUserName(user.username) }}</span>
       </div>
       <div class="user-wager-info">
         <span class="wagered-label">Wagered: </span>
@@ -93,7 +93,7 @@
       </div>
       <span class="reward-info">
         <div class="amount-wrapper">
-          <span class="amount glow">$ {{ user.Reward }}</span>
+          <span class="amount glow">$ {{ user.weightedWagered | integer}}</span>
         </div>
       </span>
     </div>
@@ -102,10 +102,10 @@
   <!-- Remaining Users List -->
   <ul>
     <li *ngFor="let user of userlists.slice(3)">
-      <strong>{{ reAdjustUserName(user.Username) }}</strong> - Wagered: ${{
+      <strong>{{ reAdjustUserName(user.username) }}</strong> - Wagered: ${{
         user.wagered
       }}
-      | Reward: ${{ user.Reward }}
+      | Reward: ${{ user.weightedWagered | integer}}
     </li>
   </ul>
 </div>
