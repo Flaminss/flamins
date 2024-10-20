@@ -31,7 +31,9 @@
       </div>
       <span class="reward-info">
         <div class="amount-wrapper">
-          <span class="amount glow">$ {{ user.weightedWagered | integer }}</span>
+          <span class="amount glow"
+            >$ {{ user.weightedWagered | integer }}</span
+          >
         </div>
       </span>
     </div>
@@ -62,7 +64,9 @@
       </div>
       <span class="reward-info">
         <div class="amount-wrapper">
-          <span class="amount glow">$ {{ user.weightedWagered | integer }}</span>
+          <span class="amount glow"
+            >$ {{ user.weightedWagered | integer }}</span
+          >
         </div>
       </span>
     </div>
@@ -93,19 +97,57 @@
       </div>
       <span class="reward-info">
         <div class="amount-wrapper">
-          <span class="amount glow">$ {{ user.weightedWagered | integer}}</span>
+          <span class="amount glow"
+            >$ {{ user.weightedWagered | integer }}</span
+          >
         </div>
       </span>
     </div>
   </div>
 
+  <div class="row lista listdetails">
+    <div class="hide-mobile col-2 html">Place</div>
+    <div class="col-5 html">User</div>
+    <div class="col-2 html">Reward</div>
+    <div class="col-3 html">Wagered</div>
+  </div>
+
+  <div class="row list" *ngFor="let list of finalList; let i = index">
+    <div class="hide-mobile col-2 html">
+      <b style="color: #6528c9; font-weight: bolder">#</b
+      ><b style="font-weight: 500">{{ i + 3 }}</b>
+    </div>
+    <div class="col-5 html">
+      <img
+        src="../../../assets/img/soakedlogo.png"
+        style="max-width: 2rem; border-radius: 4px; margin-right: 1rem"
+      /><span style="font-weight: 500">{{
+        reAdjustUserName(list.username)
+      }}</span>
+    </div>
+    <div class="col-2 html">
+      <div class="price-wrapper glow">
+        $ {{ list.weightedWagered.toFixed(2) }}
+      </div>
+    </div>
+    <div class="col-3 html">
+      <div class="price-wrapper" style="color: #fff">
+        <div
+          class="price-image-wrapper"
+          style="height: 0rem; width: 0rem; margin-right: 0px"
+        ></div>
+        $ {{ list.wagered.toFixed(2) }}
+      </div>
+    </div>
+  </div>
+
   <!-- Remaining Users List -->
-  <ul>
+  <!-- <ul>
     <li *ngFor="let user of userlists.slice(3)">
-      <strong>{{ reAdjustUserName(user.username) }}</strong> - Wagered: ${{
+      <strong>{{ reAdjustUserName(user.Username) }}</strong> - Wagered: ${{
         user.wagered
       }}
-      | Reward: ${{ user.weightedWagered | integer}}
+      | Reward: ${{ user.Reward }}
     </li>
-  </ul>
+  </ul> -->
 </div>
