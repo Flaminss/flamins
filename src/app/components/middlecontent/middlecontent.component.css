@@ -66,19 +66,15 @@
     font-weight: 600;
 }
 
-.glow {
-    animation: glow 1s ease-in-out infinite alternate;
-    color: #fff;
+.imgglow {
+    box-shadow: 0 0 10px rgb(180, 158, 33), 0 0 20px rgb(186, 164, 36), 0 0 30px rgb(184, 162, 39); /* Golden glow effect */
 }
 
-@keyframes glow {
-    from {
-        text-shadow: 0 0 10px #fff, 0 0 20px #28085d, 0 0 30px #28085d;
-    }
-    to {
-        text-shadow: 0 0 20px #fff, 0 0 30px #4d02c4, 0 0 40px #4d02c4;
-    }
+.glow {
+    color: #fff; /* Set text color */
+    text-shadow: 0 0 10px rgb(180, 158, 33), 0 0 20px rgb(186, 164, 36), 0 0 30px rgb(184, 162, 39); /* Golden glow effect */
 }
+
 
 .subtitle {
     font-size: 1.1rem;

@@ -213,14 +213,14 @@
 }
 
 /* Keyframes for glow effect */
-@keyframes glow {
+/* @keyframes glow {
   from {
     text-shadow: 0 0 10px #fff, 0 0 20px #28085d, 0 0 30px #28085d;
   }
   to {
     text-shadow: 0 0 20px #fff, 0 0 30px #4d02c4, 0 0 40px #4d02c4;
   }
-}
+} */
 .hide-mobile {
   display: none;
 }
