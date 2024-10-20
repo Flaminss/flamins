@@ -66,15 +66,11 @@
     font-weight: 600;
 }
 
-.imgglow {
-    box-shadow: 0 0 10px rgb(180, 158, 33), 0 0 20px rgb(186, 164, 36), 0 0 30px rgb(184, 162, 39); /* Golden glow effect */
-}
 
 .glow {
-    color: #fff; /* Set text color */
-    text-shadow: 0 0 10px rgb(180, 158, 33), 0 0 20px rgb(186, 164, 36), 0 0 30px rgb(184, 162, 39); /* Golden glow effect */
+    color: #fff;
+    text-shadow: 0 0 10px #fff, 0 0 20px #28085d, 0 0 30px #28085d;
 }
-
 
 .subtitle {
     font-size: 1.1rem;
