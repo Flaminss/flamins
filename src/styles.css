@@ -1,10 +1,83 @@
 
-
-body {
-    box-sizing: border-box;
+body, html {
+    width: 100%;
+    height: 100%;
+  }
+  body {
     margin: 0;
     padding: 0;
+    background: #08101b;
     background-color: #08101b;
     color: white;
     font-family: 'Raleway', sans-serif;
-}
+    box-sizing: border-box;
+  }
+.bubbles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+  }
+  
+  .bubble {
+    position: absolute;
+    bottom: -100px;
+    background: rgb(102 40 201 / 0.8);
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: rise 10s infinite ease-in;
+  }
+  
+  .bubble:nth-child(odd) {
+    width: 5px;
+    height: 5px;
+  }
+  .bubble:nth-child(even) {
+    width: 5px;
+    height: 5px;
+  }
+  
+  .bubble:nth-child(1) { left: 5%; animation-duration: 8s; }
+  .bubble:nth-child(2) { left: 15%; animation-duration: 6s; animation-delay: 1s; }
+  .bubble:nth-child(3) { left: 25%; animation-duration: 9s; }
+  .bubble:nth-child(4) { left: 35%; animation-duration: 10s; animation-delay: 2s; }
+  .bubble:nth-child(5) { left: 45%; animation-duration: 7s; }
+  .bubble:nth-child(6) { left: 55%; animation-duration: 11s; animation-delay: 1s; }
+  .bubble:nth-child(7) { left: 65%; animation-duration: 8s; }
+  .bubble:nth-child(8) { left: 75%; animation-duration: 10s; animation-delay: 2s; }
+  .bubble:nth-child(9) { left: 85%; animation-duration: 12s; }
+  .bubble:nth-child(10) { left: 95%; animation-duration: 9s; animation-delay: 3s; }
+  .bubble:nth-child(11) { left: 10%; animation-duration: 5s; }
+  .bubble:nth-child(12) { left: 20%; animation-duration: 6s; animation-delay: 1s; }
+  .bubble:nth-child(13) { left: 30%; animation-duration: 10s; }
+  .bubble:nth-child(14) { left: 40%; animation-duration: 8s; animation-delay: 1s; }
+  .bubble:nth-child(15) { left: 50%; animation-duration: 9s; }
+  .bubble:nth-child(16) { left: 60%; animation-duration: 7s; animation-delay: 2s; }
+  .bubble:nth-child(17) { left: 70%; animation-duration: 11s; }
+  .bubble:nth-child(18) { left: 80%; animation-duration: 8s; animation-delay: 1s; }
+  .bubble:nth-child(19) { left: 90%; animation-duration: 6s; }
+  .bubble:nth-child(20) { left: 95%; animation-duration: 10s; animation-delay: 2s; }
+  .bubble:nth-child(21) { left: 15%; animation-duration: 9s; }
+  .bubble:nth-child(22) { left: 25%; animation-duration: 8s; animation-delay: 1s; }
+  .bubble:nth-child(23) { left: 35%; animation-duration: 12s; }
+  .bubble:nth-child(24) { left: 45%; animation-duration: 10s; animation-delay: 3s; }
+  .bubble:nth-child(25) { left: 55%; animation-duration: 7s; }
+  
+  @keyframes rise {
+    0% {
+      bottom: -100px;
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(50px);
+    }
+    100% {
+      bottom: 1080px;
+      transform: translateX(-50px);
+    }
+  }
+  
+   
