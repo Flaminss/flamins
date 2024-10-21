@@ -104,7 +104,15 @@
       </span>
     </div>
   </div>
-
+  <div data-v-1d580398="" class="countdown">
+    <div data-v-1d580398="">
+      <span data-v-1d580398="" class="title"
+        ><span style="color: #fff" class="glow">ENDING</span> in </span
+      >
+      <span data-v-1d580398="" class="subtitle" id="countdown"
+        > {{ daysLeft }} Days {{ hoursLeft }}:{{ minutesLeft }}:{{ secondsLeft }}</span>
+    </div>
+  </div>
   <div class="row lista listdetails">
     <div class="hide-mobile col-2 html">Place</div>
     <div class="col-5 html">User</div>
@@ -115,7 +123,7 @@
   <div class="row list" *ngFor="let list of finalList; let i = index">
     <div class="hide-mobile col-2 html">
       <b style="color: #6528c9; font-weight: bolder">#</b
-      ><b style="font-weight: 500">{{ i + 3 }}</b>
+      ><b style="font-weight: 500">{{ i + 4 }}</b>
     </div>
     <div class="col-5 html">
       <img
