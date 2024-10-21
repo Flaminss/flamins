@@ -104,15 +104,19 @@
       </span>
     </div>
   </div>
-  <div data-v-1d580398="" class="countdown">
-    <div data-v-1d580398="">
-      <span data-v-1d580398="" class="title"
-        ><span style="color: #fff" class="glow">ENDING</span> in </span
-      >
-      <span data-v-1d580398="" class="subtitle" id="countdown"
-        > {{ daysLeft }} Days {{ hoursLeft }}:{{ minutesLeft }}:{{ secondsLeft }}</span>
+  <div class="countdown-timer">
+    <div class="countdown-content">
+      <span class="countdown-title">
+        <span class="glow-text">ENDING</span> in 
+      </span>
+      <span class="countdown-subtitle" id="countdown">
+        <!-- {{ daysLeft }} Days {{ hoursLeft }}:{{ minutesLeft }}:{{ secondsLeft }} -->
+        <span #days>0</span> Days <span #hours>0</span>:<span #minutes>0</span>:<span #seconds>0</span>
+        <!-- 26 Days 03:39:11 -->
+      </span>
     </div>
   </div>
+  
   <div class="row lista listdetails">
     <div class="hide-mobile col-2 html">Place</div>
     <div class="col-5 html">User</div>

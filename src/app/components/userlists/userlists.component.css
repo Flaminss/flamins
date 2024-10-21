@@ -255,26 +255,31 @@
   }
 }
 
-
-.countdown[data-v-1d580398] {
+/* Container for the countdown timer */
+.countdown-timer {
   height: 3rem;
   display: grid;
   text-align: center;
   margin-top: 1.5rem;
 }
-.countdown div[data-v-1d580398] {
+
+/* Aligning the inner content of the countdown */
+.countdown-content {
   margin: auto;
 }
-.countdown .title[data-v-1d580398] {
-  color: hsla(0, 0%, 100%, .5);
+
+/* Styling for the title section */
+.countdown-title {
+  color: hsla(0, 0%, 100%, 0.5);
   display: block;
-  font-weight: 0;
+  font-weight: 400; /* Adjusted from 0 to normal */
   letter-spacing: 1.5px;
   text-transform: uppercase;
   font-size: 1.8rem;
   margin-top: -5rem;
 }
-.glow {
-  animation: glow 1s ease-in-out infinite alternate;
+
+/* Styling for glowing text */
+.glow-text {
   color: #fff;
 }
