@@ -39,7 +39,7 @@ export class UserlistsComponent implements OnInit, OnDestroy, OnChanges {
 
     this.userService.getUserStats().subscribe(
       (data) => {
-        console.log('API Response (Full):', data);
+        // console.log('API Response (Full):', data);
         this.userlists = data;
         this.finalList = this.userlists.slice(3);
         this.updateCountdown(); // Update countdown when user data is loaded

@@ -17,7 +17,7 @@ export class UserService {
 
     const params = new HttpParams()
       .set('userId', '876a1e21-09a8-4fa5-8866-aa20db40a6c4')
-      .set('limit', '100');
+      .set('limit', '1000');
     // .set('timestamp', new Date().getTime().toString());
 
     return this.http.get(this.apiUrl, { headers, params });
