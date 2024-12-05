@@ -51,13 +51,9 @@ export class UserlistsComponent implements OnInit, OnDestroy, OnChanges {
     });
 
     const { startDate, endDate } = this.getDateRange();
-    console.log(startDate,endDate);
-
     this.userService.getUserStats(startDate, endDate).subscribe(
       (data) => {
         this.userlists = data;
-        console.log(this.userlists);
-
         this.finalList = this.userlists.slice(0, 10); // Display top 10 users
       },
       (error) => {
