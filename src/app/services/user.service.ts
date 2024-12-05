@@ -48,7 +48,8 @@ export class UserService {
       .set('Authorization', `Bearer ${token}`)
       .set('Content-Type', 'application/json');
 
-
+      console.log(startDate,endDate);
+      
     const params = new HttpParams()
       .set('userId', '876a1e21-09a8-4fa5-8866-aa20db40a6c4')
       .set('startDate', startDate)

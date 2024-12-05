@@ -73,22 +73,51 @@ export class UserlistsComponent implements OnInit, OnDestroy, OnChanges {
     const now = new Date();
     let startDate: Date;
     let endDate: Date;
-
+  
     // If today's date is before the 15th, start from the 15th of the previous month
     if (now.getDate() < 15) {
-        startDate = new Date(now.getFullYear(), now.getMonth() - 1, 15); // Start from 15th of the previous month
-        endDate = new Date(now.getFullYear(), now.getMonth(), 15); // End on the 15th of the current month
+      startDate = new Date(now.getFullYear(), now.getMonth() - 1, 15); // Start from 15th of the previous month
+      endDate = new Date(now.getFullYear(), now.getMonth(), 15); // End on the 15th of the current month
     } else {
-        startDate = new Date(now.getFullYear(), now.getMonth(), 15); // Start from the 15th of the current month
-        endDate = new Date(now.getFullYear(), now.getMonth() + 1, 15); // End on the 15th of the next month
+      startDate = new Date(now.getFullYear(), now.getMonth(), 15); // Start from 15th of the current month
+      endDate = new Date(now.getFullYear(), now.getMonth() + 1, 15); // End on the 15th of the next month
     }
-
-    // Return the dates in ISO 8601 format
-    return {
-        startDate: startDate.toISOString(),
-        endDate: endDate.toISOString(),
+  
+    // Format dates as 'YYYY-MM-DD' and append 'T00:00:00Z'
+    const formatDate = (date: Date) => {
+      const yyyy = date.getFullYear();
+      const mm = (date.getMonth() + 1).toString().padStart(2, '0'); // Month is zero-indexed
+      const dd = date.getDate().toString().padStart(2, '0');
+      return `${yyyy}-${mm}-${dd}T00:00:00Z`;
     };
-}
+  
+    return {
+      startDate: formatDate(startDate),
+      endDate: formatDate(endDate),
+    };
+  }
+
+  
+//   private getDateRange() {
+//     const now = new Date();
+//     let startDate: Date;
+//     let endDate: Date;
+
+//     // If today's date is before the 15th, start from the 15th of the previous month
+//     if (now.getDate() < 15) {
+//         startDate = new Date(now.getFullYear(), now.getMonth() - 1, 15); // Start from 15th of the previous month
+//         endDate = new Date(now.getFullYear(), now.getMonth(), 15); // End on the 15th of the current month
+//     } else {
+//         startDate = new Date(now.getFullYear(), now.getMonth(), 15); // Start from the 15th of the current month
+//         endDate = new Date(now.getFullYear(), now.getMonth() + 1, 15); // End on the 15th of the next month
+//     }
+
+//     // Return the dates in ISO 8601 format
+//     return {
+//         startDate: startDate.toISOString(),
+//         endDate: endDate.toISOString(),
+//     };
+// }
 
 
   ngOnChanges(changes: SimpleChanges): void {
