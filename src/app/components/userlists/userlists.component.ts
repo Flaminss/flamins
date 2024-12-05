@@ -41,6 +41,8 @@ export class UserlistsComponent implements OnInit, OnDestroy, OnChanges {
 
   constructor(private userService: UserService, private ngZone: NgZone) {}
 
+
+
   ngOnInit() {
     this.ngZone.runOutsideAngular(() => {
       this.countdownInterval = setInterval(() => {
@@ -48,11 +50,15 @@ export class UserlistsComponent implements OnInit, OnDestroy, OnChanges {
       }, 1000);
     });
 
-    this.userService.getUserStats().subscribe(
+    const { startDate, endDate } = this.getDateRange();
+    console.log(startDate,endDate);
+
+    this.userService.getUserStats(startDate, endDate).subscribe(
       (data) => {
         this.userlists = data;
-        this.finalList = this.userlists.slice(3);
-        this.updateCountdown(); // Update countdown when user data is loaded
+        console.log(this.userlists);
+
+        this.finalList = this.userlists.slice(0, 10); // Display top 10 users
       },
       (error) => {
         console.error('API Error (Status):', error.status);
@@ -61,6 +67,29 @@ export class UserlistsComponent implements OnInit, OnDestroy, OnChanges {
       }
     );
   }
+
+
+  private getDateRange() {
+    const now = new Date();
+    let startDate: Date;
+    let endDate: Date;
+
+    // If today's date is before the 15th, start from the 15th of the previous month
+    if (now.getDate() < 15) {
+        startDate = new Date(now.getFullYear(), now.getMonth() - 1, 15); // Start from 15th of the previous month
+        endDate = new Date(now.getFullYear(), now.getMonth(), 15); // End on the 15th of the current month
+    } else {
+        startDate = new Date(now.getFullYear(), now.getMonth(), 15); // Start from the 15th of the current month
+        endDate = new Date(now.getFullYear(), now.getMonth() + 1, 15); // End on the 15th of the next month
+    }
+
+    // Return the dates in ISO 8601 format
+    return {
+        startDate: startDate.toISOString(),
+        endDate: endDate.toISOString(),
+    };
+}
+
 
   ngOnChanges(changes: SimpleChanges): void {
     this.updateCountdown();
