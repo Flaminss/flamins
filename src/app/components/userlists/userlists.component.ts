@@ -97,28 +97,6 @@ export class UserlistsComponent implements OnInit, OnDestroy, OnChanges {
     };
   }
 
-  
-//   private getDateRange() {
-//     const now = new Date();
-//     let startDate: Date;
-//     let endDate: Date;
-
-//     // If today's date is before the 15th, start from the 15th of the previous month
-//     if (now.getDate() < 15) {
-//         startDate = new Date(now.getFullYear(), now.getMonth() - 1, 15); // Start from 15th of the previous month
-//         endDate = new Date(now.getFullYear(), now.getMonth(), 15); // End on the 15th of the current month
-//     } else {
-//         startDate = new Date(now.getFullYear(), now.getMonth(), 15); // Start from the 15th of the current month
-//         endDate = new Date(now.getFullYear(), now.getMonth() + 1, 15); // End on the 15th of the next month
-//     }
-
-//     // Return the dates in ISO 8601 format
-//     return {
-//         startDate: startDate.toISOString(),
-//         endDate: endDate.toISOString(),
-//     };
-// }
-
 
   ngOnChanges(changes: SimpleChanges): void {
     this.updateCountdown();
