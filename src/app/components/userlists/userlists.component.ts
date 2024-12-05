@@ -10,12 +10,11 @@ import {
 } from '@angular/core';
 import { UserService } from '../../services/user.service';
 import { CommonModule } from '@angular/common';
-import { IntegerPipe } from '../../pipe/integer.pipe';
 
 @Component({
   selector: 'app-userlists',
   standalone: true,
-  imports: [CommonModule, IntegerPipe],
+  imports: [CommonModule],
   templateUrl: './userlists.component.html',
   styleUrls: ['./userlists.component.css'],
 })
@@ -26,6 +25,18 @@ export class UserlistsComponent implements OnInit, OnDestroy, OnChanges {
   @ViewChild('hours') hours!: ElementRef;
   @ViewChild('minutes') minutes!: ElementRef;
   @ViewChild('seconds') seconds!: ElementRef;
+  reward: any = {
+    1: 1200,
+    2: 250,
+    3: 150,
+    4: 100,
+    5: 100,
+    6: 50,
+    7: 50,
+    8: 50,
+    9: 25,
+    10: 25,
+  };
   private countdownInterval: any;
 
   constructor(private userService: UserService, private ngZone: NgZone) {}
@@ -39,7 +50,6 @@ export class UserlistsComponent implements OnInit, OnDestroy, OnChanges {
 
     this.userService.getUserStats().subscribe(
       (data) => {
-        // console.log('API Response (Full):', data);
         this.userlists = data;
         this.finalList = this.userlists.slice(3);
         this.updateCountdown(); // Update countdown when user data is loaded

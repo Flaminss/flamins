@@ -31,8 +31,11 @@
       </div>
       <span class="reward-info">
         <div class="amount-wrapper">
-          <span class="amount glow"
+          <!-- <span class="amount glow"
             >$ {{ user.weightedWagered | integer }}</span
+          > -->
+          <span class="amount glow"
+            >$ {{ this.reward[1] }}</span
           >
         </div>
       </span>
@@ -65,7 +68,7 @@
       <span class="reward-info">
         <div class="amount-wrapper">
           <span class="amount glow"
-            >$ {{ user.weightedWagered | integer }}</span
+            >$ {{ this.reward[2] }}</span
           >
         </div>
       </span>
@@ -98,7 +101,7 @@
       <span class="reward-info">
         <div class="amount-wrapper">
           <span class="amount glow"
-            >$ {{ user.weightedWagered | integer }}</span
+            >$ {{ this.reward[3] }}</span
           >
         </div>
       </span>
@@ -107,16 +110,17 @@
   <div class="countdown-timer">
     <div class="countdown-content">
       <span class="countdown-title">
-        <span class="glow-text glow">ENDING</span> in 
+        <span class="glow-text glow">ENDING</span> in
       </span>
       <span class="countdown-subtitle" id="countdown">
         <!-- {{ daysLeft }} Days {{ hoursLeft }}:{{ minutesLeft }}:{{ secondsLeft }} -->
-        <span #days>0</span> Days <span #hours>0</span>:<span #minutes>0</span>:<span #seconds>0</span>
+        <span #days>0</span> Days <span #hours>0</span>:<span #minutes>0</span
+        >:<span #seconds>0</span>
         <!-- 26 Days 03:39:11 -->
       </span>
     </div>
   </div>
-  
+
   <div class="row lista listdetails">
     <div class="hide-mobile col-2 html">Place</div>
     <div class="col-5 html">User</div>
@@ -124,7 +128,10 @@
     <div class="col-3 html">Wagered</div>
   </div>
 
-  <div class="row list" *ngFor="let list of finalList; let i = index">
+  <div
+    class="row list"
+    *ngFor="let list of finalList.slice(3, 10); let i = index"
+  >
     <div class="hide-mobile col-2 html">
       <b style="color: #6528c9; font-weight: bolder">#</b
       ><b style="font-weight: 500">{{ i + 4 }}</b>
@@ -140,9 +147,10 @@
     <div class="col-2 html">
       <span class="reward-info">
         <div class="amount-wrapper">
-          <span class="amount glow"
+          <!-- <span class="amount glow"
             >$ {{ list.weightedWagered | integer }}</span
-          >
+          > -->
+          <span class="amount glow">$ {{ this.reward[i + 4] }}</span>
         </div>
       </span>
     </div>
