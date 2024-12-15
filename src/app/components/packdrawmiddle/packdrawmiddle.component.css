@@ -109,19 +109,6 @@
     stroke-width: 2;
 }
 
-@media (max-width: 768px) {
-    .title {
-        margin-top: 5rem;
-    }
-    .subtitle{
-        font-size: 0.7rem;
-    }
-
-    .button-container {
-        flex-direction: column;
-        align-items: center;
-    }
-}
 @media screen and (max-width: 768px) {
     .toggle-images {
         padding: 20px; /* Add padding for better spacing on smaller screens */
@@ -133,5 +120,19 @@
 
     .vertical-line {
         height: 40px; /* Reduce line height on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        margin-top: 5rem;
+    }
+    .subtitle{
+        font-size: 0.7rem;
+    }
+
+    .button-container {
+        flex-direction: column;
+        align-items: center;
     }
 }

@@ -5,18 +5,16 @@ import { MiddlecontentComponent } from './components/middlecontent/middlecontent
 import { UserlistsComponent } from './components/userlists/userlists.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './components/footer/footer.component';
+import { PackdrawComponent } from './components/packdraw/packdraw.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
-    HeaderComponent,
-    MiddlecontentComponent,
-    UserlistsComponent,
-    HttpClientModule,
     FooterComponent,
-  ],
+    HeaderComponent
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })

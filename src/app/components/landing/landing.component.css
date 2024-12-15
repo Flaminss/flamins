@@ -1,0 +1,25 @@
+#leftsvg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    z-index: -1000;
+    pointer-events: none;
+}
+
+#rightsvg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    z-index: -1000;
+    pointer-events: none;
+}
+
+@media (max-width: 900px) {
+    #leftsvg, #rightsvg {
+        display: none;
+    }
+}

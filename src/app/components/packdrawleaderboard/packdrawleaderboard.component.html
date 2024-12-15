@@ -1,0 +1,142 @@
+<div class="user-list-container" *ngIf="userlists">
+  <div
+    class="user-card-wrapper"
+    style="
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+    "
+  >
+    <div class="user-card user-left" *ngIf="finalList[0]">
+      <img
+        [alt]="finalList[0].username + ' avatar'"
+        src="../../../assets/img/soakedlogo.png"
+        width="96"
+        height="96"
+        class="user-avatar"
+      />
+      <div class="username-wrapper">
+        <span class="username">{{
+          reAdjustUserName(finalList[0].username)
+        }}</span>
+      </div>
+      <div class="user-wager-info">
+        <span class="wagered-label">Wagered: </span>
+        <span class="amount">$ {{ finalList[0].wagerAmount.toFixed(2) }}</span>
+      </div>
+      <span class="reward-info">
+        <div class="amount-wrapper">
+          <span class="amount glow">$ {{ this.reward[1] }}</span>
+        </div>
+      </span>
+    </div>
+    <div
+      class="user-card user-center"
+      style="margin-top: 2rem"
+      *ngIf="finalList[1]"
+    >
+      <img
+        [alt]="finalList[1].username + ' avatar'"
+        src="../../../assets/img/soakedlogo.png"
+        width="96"
+        height="96"
+        class="user-avatar"
+      />
+      <div class="username-wrapper">
+        <span class="username">{{
+          reAdjustUserName(finalList[1].username)
+        }}</span>
+      </div>
+      <div class="user-wager-info">
+        <span class="wagered-label">Wagered: </span>
+        <span class="amount">$ {{ finalList[1].wagerAmount.toFixed(2) }}</span>
+      </div>
+      <span class="reward-info">
+        <div class="amount-wrapper">
+          <span class="amount glow">$ {{ this.reward[2] }}</span>
+        </div>
+      </span>
+    </div>
+
+    <div
+      class="user-card user-right"
+      style="margin-top: 2rem"
+      *ngIf="finalList[2]"
+    >
+      <img
+        [alt]="finalList[2].username + ' avatar'"
+        src="../../../assets/img/soakedlogo.png"
+        width="96"
+        height="96"
+        class="user-avatar"
+      />
+      <div class="username-wrapper">
+        <span class="username">{{
+          reAdjustUserName(finalList[2].username)
+        }}</span>
+      </div>
+      <div class="user-wager-info">
+        <span class="wagered-label">Wagered: </span>
+        <span class="amount">$ {{ finalList[2].wagerAmount.toFixed(2) }}</span>
+      </div>
+      <span class="reward-info">
+        <div class="amount-wrapper">
+          <span class="amount glow">$ {{ this.reward[3] }}</span>
+        </div>
+      </span>
+    </div>
+  </div>
+
+  <div class="countdown-timer">
+    <div class="countdown-content">
+      <span class="countdown-title">
+        <span class="glow-text glow">ENDING</span> in
+      </span>
+      <span class="countdown-subtitle" id="countdown">
+        <span #days>0</span> Days <span #hours>0</span>:<span #minutes>0</span
+        >:<span #seconds>0</span>
+      </span>
+    </div>
+  </div>
+  <div class="row lista listdetails">
+    <div class="hide-mobile col-2 html">Place</div>
+    <div class="col-5 html">User</div>
+    <div class="col-2 html">Reward</div>
+    <div class="col-3 html">Wagered</div>
+  </div>
+
+  <div
+    class="row list"
+    *ngFor="let user of finalList.slice(3, 5); let i = index"
+  >
+    <div class="hide-mobile col-2 html">
+      <b style="color: #6528c9; font-weight: bolder">#</b
+      ><b style="font-weight: 500">{{ i + 4 }}</b>
+    </div>
+    <div class="col-5 html">
+      <img
+        src="../../../assets/img/soakedlogo.png"
+        style="max-width: 2rem; border-radius: 4px; margin-right: 1rem"
+      /><span style="font-weight: 500">{{
+        reAdjustUserName(user.username)
+      }}</span>
+    </div>
+    <div class="col-2 html">
+      <span class="reward-info">
+        <div class="amount-wrapper">
+          <span class="amount glow">$ {{ this.reward[i + 4] }}</span>
+        </div>
+      </span>
+    </div>
+    <div class="col-3 html">
+      <div class="price-wrapper" style="color: #fff">
+        <div
+          class="price-image-wrapper"
+          style="height: 0rem; width: 0rem; margin-right: 0px"
+        ></div>
+        $ {{ user.wagerAmount.toFixed(2) }}
+      </div>
+    </div>
+  </div>
+</div>
