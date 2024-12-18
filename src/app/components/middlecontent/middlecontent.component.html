@@ -5,12 +5,7 @@
         class="game-image clash-image"
         id="clashImage"
         src="../../../assets/img/roobetlogo.png"
-        style="
-          cursor: pointer;
-          opacity: 1;
-          background-color: transparent;
-          border-radius: 100%;
-        "
+        [style]="getRoobetStyle()"
         onclick="window.location.href='/'"
       />
     </a>
@@ -27,13 +22,7 @@
         class="game-image clash-image"
         id="clashImage"
         src="../../../assets/img/packdraw.png"
-        style="
-          cursor: pointer;
-          opacity: 0.3;
-          background-color: transparent;
-          border-radius: 50%;
-          object-fit: cover;
-        "
+        [style]="getPackdrawStyle()"
         onclick="window.location.href='/leaderboard/packdraw'"
       />
     </a>

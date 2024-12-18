@@ -23,13 +23,13 @@ export class PackdrawleaderboardComponent {
   @ViewChild('minutes') minutes!: ElementRef;
   @ViewChild('seconds') seconds!: ElementRef;
   reward: any = {
-    1: 1500,
+    1: 650,
     2: 250,
     3: 150,
     4: 100,
     5: 100,
-    6: 50,
-    7: 50,
+    6: 75,
+    7: 75,
     8: 50,
     9: 25,
     10: 25,
@@ -50,7 +50,7 @@ export class PackdrawleaderboardComponent {
     this.packdrawservice.getPackdrawStats(startDate).subscribe(
       (data) => {
         this.userlists = data;
-        this.finalList = this.userlists.leaderboard.slice(0, 5); // Limit to top 5 users
+        this.finalList = this.userlists.leaderboard.slice(0, 10); // Limit to top 10 users
       },
       (error) => {
         console.error('API Error:', error);

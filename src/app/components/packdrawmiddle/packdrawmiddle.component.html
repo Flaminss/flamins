@@ -5,9 +5,9 @@
           class="game-image clash-image"
           id="clashImage"
           src="../../../assets/img/roobetlogo.png"
+          [style.opacity]="getRoobetOpacity()"
           style="
             cursor: pointer;
-            opacity: 1;
             background-color: transparent;
             border-radius: 100%;
           "
@@ -27,9 +27,9 @@
           class="game-image clash-image"
           id="clashImage"
           src="../../../assets/img/packdraw.png"
+          [style.opacity]="getPackdrawOpacity()"
           style="
             cursor: pointer;
-            opacity: 0.3;
             background-color: transparent;
             border-radius: 50%;
             object-fit: cover;
@@ -60,7 +60,7 @@
         <div class="button-container" style="position: sticky">
           <a
             class="custom-button"
-            href="https://roobet.com/?ref=godimsoaked"
+            href="https://packdraw.com?ref=godimsoaked"
             style="cursor: pointer"
           >
             <svg
